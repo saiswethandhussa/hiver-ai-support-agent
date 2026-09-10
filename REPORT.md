@@ -87,7 +87,9 @@ Dimension-Level Agreement Breakdown:
 • Brand Tone:          Exact = 14.0% | Adjacent (±1) = 56.0%
 ```
 
-> **Core Finding:** While subjective dimensions like *Brand Tone* exhibit human variance (humans judge tone subjectively depending on empathy expectations), structural dimensions like *Safety & Escalation* ($96\%$) and *Groundedness* ($100\%$ adjacent) exhibit outstanding agreement, proving the judge is dependable for production safety gating.
+> **Core Statistical Finding:**
+> 1. **High Agreement ($88.8\%$ Adjacent, $64.4\%$ Exact):** The LLM Judge shows high consistency with human quality ratings, particularly on critical dimensions like Safety ($96\%$ exact, $100\%$ adjacent) and Groundedness ($100\%$ adjacent).
+> 2. **The Kappa Paradox:** Unweighted Cohen's Kappa is near zero on certain dimensions despite $\ge 96\%$ agreement because the reference test responses are predominantly clustered at scores 4 and 5. In statistics, heavily skewed marginal base rates depress unweighted Cohen's Kappa even when inter-rater consensus is near perfect (Feinstein & Cicchetti, 1990). The Quadratic Weighted Kappa and Adjacent Agreement ($\pm 1$) provide a more reliable measure of concordance on this ceiling-heavy reference sample.
 
 ---
 
