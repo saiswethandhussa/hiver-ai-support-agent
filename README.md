@@ -62,14 +62,14 @@ Open **[http://127.0.0.1:8000](http://127.0.0.1:8000)** in your browser to explo
 
 ```mermaid
 flowchart TD
-    A[Customer Inbound Tweet] --> B[Preprocessor & Normalizer]
-    B --> C[Intent Classifier (7 Intents)]
-    C -->|Intent + Confidence| D[Escalation & Triage Reasoner]
-    B --> E[Historical Resolution RAG Index]
-    E -->|Top-K Verified QA Pairs| F[Grounded Reply Generator]
-    D -->|Escalation Decision + Stated Reason| G[Safety Arbiter & Policy Guardrails]
+    A[Customer Inbound Tweet] --> B[Preprocessor and Normalizer]
+    B --> C[Intent Classifier - 7 Intents]
+    B --> D[Historical Resolution RAG Index]
+    C --> E[Escalation and Triage Engine]
+    D --> F[Grounded Reply Generator]
+    E --> G[Safety Arbiter and Policy Guardrails]
     F --> G
-    G --> H[Final Output: Intent, Triage Decision, Reason, Grounded Reply]
+    G --> H[Final Structured Output]
 ```
 
 ### Core Components:
@@ -98,7 +98,7 @@ For the complete 6-page comprehensive report covering:
 5. Roadmap with 1 more week (tool calling, active learning)
 6. 12-item Decision Log
 
-👉 **Read the full report in [`REPORT.md`](file:///e:/Downloads/Hiver/REPORT.md)**
+👉 **Read the full report in [`REPORT.md`](REPORT.md)**
 
 ---
 
