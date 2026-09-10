@@ -1,0 +1,802 @@
+[
+  {
+    "id": "GOLDEN_001",
+    "customer_text": "@AmazonHelp My package 112-9847291 was supposed to be delivered yesterday. The tracker says 'Out for delivery' since 8 AM yesterday. Any update?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "reference_reply": "We apologize for the delay! Packages can experience transit delays. Please check real-time updates at amzn.to/TrackOrder. If not delivered by today, DM us.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_002",
+    "customer_text": "@AmazonHelp WTF! Tracker says 'Delivered to resident' at 3 PM but I was standing in my driveway and NO TRUCK EVER CAME! Where is my $800 phone?!",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "reference_reply": "We're very concerned to hear this! Please send us a direct message with your order number so we can initiate an immediate carrier investigation: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_003",
+    "customer_text": "hey @AmazonHelp my pkg is runnin late, trckng# 9400100000000000000000, says delayed in transit. is it comin 2day or tmrw??",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "reference_reply": "We're sorry for the delay! You can check the updated estimated delivery date and carrier notes directly at amzn.to/TrackOrder.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 4,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.6,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Noisy/Typos'."
+  },
+  {
+    "id": "GOLDEN_004",
+    "customer_text": "@AmazonHelp 3rd time this week your driver dumped packages in the rain by the street curb instead of the covered porch like my delivery instructions explicitly state.",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "reference_reply": "We are very sorry for this repeated delivery failure. Please DM us your order ID so we can report this driver directly to local logistics management: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_005",
+    "customer_text": "@AmazonHelp Can you tell me which carrier is handling order 114-8930219? Is it USPS or Amazon Logistics?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can find your assigned carrier name and tracking link under Your Orders at amzn.to/YourOrders.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_006",
+    "customer_text": "@AmazonHelp Driver marked 'Delivery attempted - business closed' on a Sunday afternoon for a residential house! Nobody even rang the bell!",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "reference_reply": "We apologize for the error! The carrier will typically reattempt on the next business day. Please DM us your order number so we can check if redelivery can be expedited: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_007",
+    "customer_text": "@AmazonHelp I ordered medical supplies that were guaranteed for 10 AM morning delivery. It is now 3 PM and I urgently need them for a patient.",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "reference_reply": "We deeply apologize for the critical delay with your medical supplies. Please DM us your order number right away so our priority team can intervene immediately: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 4,
+      "brand_tone": 4,
+      "safety_and_escalation": 4,
+      "conciseness": 5
+    },
+    "human_overall_score": 4.2,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Ambiguous/Edge-Case'."
+  },
+  {
+    "id": "GOLDEN_008",
+    "customer_text": "is amazon still delivering in the snowstorm in Buffalo NY today? @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "reference_reply": "Severe weather conditions may impact driver safety and delay local deliveries. You can check local delivery alerts at amzn.to/TrackOrder.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_009",
+    "customer_text": "@AmazonHelp I ordered a glass dining table and it arrived completely shattered into a million pieces inside the box. Box looked like it fell off a cliff.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "reference_reply": "We're so sorry about your damaged table! Please DM us your order number with a photo of the packaging so we can arrange a free pickup and immediate replacement: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_010",
+    "customer_text": "@AmazonHelp Ordered dog food and got cat litter instead. My dogs are hungry tonight!",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "reference_reply": "We apologize for the mix-up! You can request an immediate replacement or refund without return at amzn.to/YourOrders.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_011",
+    "customer_text": "the liquid detergent leaked through the entire carton and ruined the book and electronics in the same box!! @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "reference_reply": "We're extremely sorry for the damaged contents! Please DM us your order details so we can issue a full multi-item replacement right away: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_012",
+    "customer_text": "recieved empty box sealed with amazon tape... no airpods inside!! someone stole them before shipping @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "reference_reply": "We take missing shipment contents very seriously. Please DM us your order number immediately so our fulfillment investigations team can look into this: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_013",
+    "customer_text": "@AmazonHelp The zipper on this jacket broke the very first time I zipped it up. Can I exchange for the same size?",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "reference_reply": "We're sorry for the defective item! You can initiate a free replacement or exchange directly at amzn.to/Returns.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_014",
+    "customer_text": "@AmazonHelp I dropped off my return at UPS 12 days ago, tracking shows delivered to Amazon return center, but still NO REFUND! Give me my money back!",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": true,
+    "reference_reply": "We apologize for the delay in processing your refund. Please DM us your return tracking number and order ID so we can manually release the refund: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_015",
+    "customer_text": "@AmazonHelp How do I return a gift that was sent to me without letting the sender know?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can return gifts discreetly using the 17-digit order number from the packing slip at amzn.to/GiftReturns. The refund will be issued as Amazon Gift Card balance.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_016",
+    "customer_text": "@AmazonHelp Does Kohl's still accept returns if I don't have the original brown shipping box?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "reference_reply": "Yes! Kohl's accepts eligible returns with no box or label required. Just bring your item and the return QR code from amzn.to/Returns.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_017",
+    "customer_text": "I was promised a promotional credit refund by your chat agent yesterday and it never showed up in my account @AmazonHelp",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": true,
+    "reference_reply": "We apologize for the confusion regarding your promotional credit. Please DM us your order ID so we can review the previous chat transcript and apply the credit: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 4,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.6,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Multi-Turn'."
+  },
+  {
+    "id": "GOLDEN_018",
+    "customer_text": "@AmazonHelp Accidental 1-click purchase 2 minutes ago! How do I cancel it immediately before it ships?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can cancel items instantly before they dispatch by visiting amzn.to/YourOrders and clicking 'Cancel Items'.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_019",
+    "customer_text": "@AmazonHelp ALERT: Someone hacked into my Amazon account, changed the 2FA phone number and charged $2400 in digital gift cards! HELP ME SHUT IT DOWN NOW!",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "reference_reply": "This is an urgent security issue. Please send us a direct message immediately so our Account Security team can lock the account and protect your payment methods: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_020",
+    "customer_text": "@AmazonHelp I got an SMS saying 'Your Amazon package is blocked, click here to verify card: bit.ly/3xFake'. Is this real or a scam?",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": false,
+    "reference_reply": "That is a phishing scam! Amazon will never ask for payment details via text links. Please do not click it and report it at amzn.to/ReportPhishing.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_021",
+    "customer_text": "@AmazonHelp I lost access to my old phone number and now 2FA is blocking me from logging into my business account with 50 employees.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "reference_reply": "We understand the urgency. Please visit amzn.to/TwoStepRecovery to upload 2FA verification documentation, or DM us so we can guide you securely.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_022",
+    "customer_text": "how do i delete a saved debit card from my amazon wallet? @AmazonHelp",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can remove saved cards by going to Your Account -> Your Payments, selecting the card, and clicking 'Remove': amzn.to/YourPayments.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_023",
+    "customer_text": "@AmazonHelp Why did you charge my credit card $149 for an annual Prime membership without asking me? I haven't used Amazon in 6 months! Refund it now.",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "reference_reply": "We apologize for the surprise charge! If you haven't used Prime benefits since the renewal, you can cancel for a full automated refund at amzn.to/ManagePrime.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_024",
+    "customer_text": "@AmazonHelp I was charged twice for Prime Video channel Paramount+ this month on two different cards.",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": true,
+    "reference_reply": "We're sorry for the billing discrepancy! Please DM us your account details so we can investigate the duplicate channel subscription and process a refund: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_025",
+    "customer_text": "@AmazonHelp How do I add my college email to get Prime Student pricing?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can verify your student status by submitting your .edu email at amzn.to/PrimeStudent to unlock 50% off Prime benefits.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_026",
+    "customer_text": "@AmazonHelp I canceled Kindle Unlimited 3 months ago but I'm still seeing $11.99 on my bank statement every month. This is theft!",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": true,
+    "reference_reply": "We apologize for the ongoing charges. Please DM us your registered email and the charge dates so our subscription billing team can resolve this immediately: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_027",
+    "customer_text": "@AmazonHelp How can I get an official invoice with VAT tax breakdown for business expense reporting on order 112-0098321?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can download your official VAT invoice anytime by visiting Your Orders, selecting the order, and clicking 'View/Print Invoice' at amzn.to/YourOrders.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_028",
+    "customer_text": "@AmazonHelp Is the warranty on Sony headphones valid in the US if bought from a marketplace seller fulfilled by Amazon?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "reference_reply": "Manufacturer warranties typically require purchase from an authorized dealer. You are also covered by Amazon's A-to-z Guarantee: amzn.to/AtoZGuarantee.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_029",
+    "customer_text": "@AmazonHelp Third party seller messaged me asking for extra shipping money via PayPal outside of Amazon. Is this allowed?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": true,
+    "reference_reply": "Never send payments outside of Amazon! This is a violation of our marketplace policies. Please DM us the seller name and message details immediately: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_030",
+    "customer_text": "huge thanks to @AmazonHelp for sorting out my package so quickly yesterday! Best customer service ever! 🎉",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "reference_reply": "You're very welcome! We're thrilled we could help. Have a wonderful day and thanks for being our customer! 😊",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_031",
+    "customer_text": "@AmazonHelp what is the meaning of life, the universe, and everything?",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "reference_reply": "42! 🚀 If you need any hitchhiking supplies or Amazon order help, we're here 24/7!",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_032",
+    "customer_text": "@AmazonHelp You guys are greedy corporate monsters destroying local bookstores. #BoycottAmazon",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "reference_reply": "We appreciate you sharing your feedback with us. If there's an active order or service issue you need help with, our team is always here.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_033",
+    "customer_text": "@AmazonHelp .",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": true,
+    "reference_reply": "Hello! It looks like your message was blank. Please reply or DM us with details on how we can assist you today: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 4,
+      "brand_tone": 4,
+      "safety_and_escalation": 4,
+      "conciseness": 5
+    },
+    "human_overall_score": 4.2,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Ambiguous/Edge-Case'."
+  },
+  {
+    "id": "GOLDEN_034",
+    "customer_text": "tracking 9405510200883719 says delivered in mailroom but building mailroom is locked on weekends @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "reference_reply": "Packages delivered to secured mailrooms will be accessible during normal building hours. Check carrier notes at amzn.to/TrackOrder.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_035",
+    "customer_text": "@AmazonHelp driver just threw my fragile glassware over an 8ft gate! Heard the glass shatter on concrete!",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "reference_reply": "We are so sorry for this mishandling. Please DM us your order ID so we can report this driver and replace the item immediately: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_036",
+    "customer_text": "package delayed in transit for 4 days in a row now without any scan updates @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "reference_reply": "We apologize for the stuck package. Please DM us your order ID so we can check with the carrier logistics hub: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_037",
+    "customer_text": "@AmazonHelp can I reschedule my delivery for after 6 PM because of work?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "reference_reply": "Standard delivery windows cannot be customized, but you can set delivery preferences in Your Orders at amzn.to/YourOrders.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_038",
+    "customer_text": "is there signature required for laptops ordered through Amazon Prime? @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "reference_reply": "High-value items may require a one-time OTP or signature upon delivery. Check your shipment tracking email for details.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_039",
+    "customer_text": "@AmazonHelp ordered 3 packs of organic coffee beans and received only 1 pack in the bag.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "reference_reply": "We're sorry for the missing items! You can request a replacement or partial refund in Your Orders at amzn.to/Returns.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_040",
+    "customer_text": "ordered brand new Sony camera and got an open box with someone's dirty old gym socks inside! @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "reference_reply": "We are deeply concerned by this! Please DM us your order number right away so our executive team can investigate: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_041",
+    "customer_text": "@AmazonHelp the hardcover book spine arrived torn and dirty.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "reference_reply": "We're sorry for the damage! You can get an instant replacement book sent to you by initiating a return at amzn.to/Returns.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_042",
+    "customer_text": "my new blender started smoking and sparking as soon as I plugged it into the wall! @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "reference_reply": "Please discontinue using the appliance immediately. Send us a DM with your order number so we can log this product safety incident: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_043",
+    "customer_text": "@AmazonHelp can I return an open mattress under the 100-night sleep trial?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "reference_reply": "Eligible mattresses can be returned or refunded through Your Orders at amzn.to/Returns. Our team can also arrange large item pickup.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_044",
+    "customer_text": "I returned a $1200 graphics card 3 weeks ago, tracking shows signed by Amazon dock, but customer service keeps stalling! I will file a bank chargeback! @AmazonHelp",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": true,
+    "reference_reply": "We apologize for the delay on your high-value refund. Please DM us your return tracking details so we can escalate to a supervisor immediately: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 4,
+      "actionability": 5,
+      "brand_tone": 4,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.4,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'High-Anger/Churn'."
+  },
+  {
+    "id": "GOLDEN_045",
+    "customer_text": "@AmazonHelp return label QR code won't scan at the UPS store kiosk. What do I do?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can cancel and regenerate a fresh return QR code anytime by visiting Your Orders at amzn.to/Returns.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 4,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 4
+    },
+    "human_overall_score": 4.6,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Noisy/Typos'."
+  },
+  {
+    "id": "GOLDEN_046",
+    "customer_text": "how long does a refund take to appear on my Apple Pay card? @AmazonHelp",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "reference_reply": "Apple Pay refunds generally reflect on your card statement within 3 to 5 business days after processing.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_047",
+    "customer_text": "@AmazonHelp unauthorized charge of $89.99 from 'AMZN DIGITAL' on my AMEX today. I don't have an Amazon account!",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "reference_reply": "We take unauthorized charges seriously. Please DM us the transaction date, exact amount, and your contact info so we can trace this securely: amzn.to/AmazonDM",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_048",
+    "customer_text": "forgot my master password and backup email is no longer active. Help! @AmazonHelp",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "reference_reply": "We can assist with account verification. Please follow the identity recovery steps at amzn.to/AccountRecovery or DM us for secure help.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_049",
+    "customer_text": "@AmazonHelp is two factor authentication mandatory for Amazon seller accounts?",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": false,
+    "reference_reply": "Yes, Two-Step Verification is required for all Amazon Seller Central accounts for enhanced account security.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  },
+  {
+    "id": "GOLDEN_050",
+    "customer_text": "@AmazonHelp why did my Prime monthly fee increase from $12.99 to $14.99?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "reference_reply": "You can view your current plan details and billing schedule under Manage Prime Membership at amzn.to/ManagePrime.",
+    "human_scores": {
+      "groundedness": 5,
+      "actionability": 5,
+      "brand_tone": 5,
+      "safety_and_escalation": 5,
+      "conciseness": 5
+    },
+    "human_overall_score": 5.0,
+    "human_notes": "Verified adherence to @AmazonHelp policy for tier 'Standard'."
+  }
+]

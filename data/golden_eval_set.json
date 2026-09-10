@@ -1,0 +1,2002 @@
+[
+  {
+    "id": "GOLDEN_001",
+    "customer_text": "@AmazonHelp My package 112-9847291 was supposed to be delivered yesterday. The tracker says 'Out for delivery' since 8 AM yesterday. Any update?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the delay! Packages can experience transit delays. Please check real-time updates at amzn.to/TrackOrder. If not delivered by today, DM us.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard delayed tracking query; self-service tracking link provides direct resolution."
+  },
+  {
+    "id": "GOLDEN_002",
+    "customer_text": "@AmazonHelp WTF! Tracker says 'Delivered to resident' at 3 PM but I was standing in my driveway and NO TRUCK EVER CAME! Where is my $800 phone?!",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We're very concerned to hear this! Please send us a direct message with your order number so we can initiate an immediate carrier investigation: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Package marked delivered but missing high-value item; requires carrier theft/misdelivery trace."
+  },
+  {
+    "id": "GOLDEN_003",
+    "customer_text": "hey @AmazonHelp my pkg is runnin late, trckng# 9400100000000000000000, says delayed in transit. is it comin 2day or tmrw??",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We're sorry for the delay! You can check the updated estimated delivery date and carrier notes directly at amzn.to/TrackOrder.",
+    "difficulty_tier": "Noisy/Typos",
+    "human_annotation_rationale": "Informal noisy text with carrier delay query; self-service tracking link is appropriate."
+  },
+  {
+    "id": "GOLDEN_004",
+    "customer_text": "@AmazonHelp 3rd time this week your driver dumped packages in the rain by the street curb instead of the covered porch like my delivery instructions explicitly state.",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "HIGH_SEVERITY_OR_CHURN",
+    "reference_reply": "We are very sorry for this repeated delivery failure. Please DM us your order ID so we can report this driver directly to local logistics management: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Repeated failure violating explicit instructions with property risk; requires human logistics escalation."
+  },
+  {
+    "id": "GOLDEN_005",
+    "customer_text": "@AmazonHelp Can you tell me which carrier is handling order 114-8930219? Is it USPS or Amazon Logistics?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find your assigned carrier name and tracking link under Your Orders at amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Simple informational query regarding carrier assignment."
+  },
+  {
+    "id": "GOLDEN_006",
+    "customer_text": "@AmazonHelp Driver marked 'Delivery attempted - business closed' on a Sunday afternoon for a residential house! Nobody even rang the bell!",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We apologize for the error! The carrier will typically reattempt on the next business day. Please DM us your order number so we can check if redelivery can be expedited: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "False delivery attempt code on residential address; may require dispatch re-route."
+  },
+  {
+    "id": "GOLDEN_007",
+    "customer_text": "@AmazonHelp I ordered medical supplies that were guaranteed for 10 AM morning delivery. It is now 3 PM and I urgently need them for a patient.",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "HIGH_SEVERITY_OR_CHURN",
+    "reference_reply": "We deeply apologize for the critical delay with your medical supplies. Please DM us your order number right away so our priority team can intervene immediately: amzn.to/AmazonDM",
+    "difficulty_tier": "Ambiguous/Edge-Case",
+    "human_annotation_rationale": "Urgent medical criticality with high liability risk; requires immediate human intervention."
+  },
+  {
+    "id": "GOLDEN_008",
+    "customer_text": "is amazon still delivering in the snowstorm in Buffalo NY today? @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Severe weather conditions may impact driver safety and delay local deliveries. You can check local delivery alerts at amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "General weather/logistics inquiry resolvable via standard FAQ guidance."
+  },
+  {
+    "id": "GOLDEN_009",
+    "customer_text": "@AmazonHelp I ordered a glass dining table and it arrived completely shattered into a million pieces inside the box. Box looked like it fell off a cliff.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We're so sorry about your damaged table! Please DM us your order number with a photo of the packaging so we can arrange a free pickup and immediate replacement: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Heavy high-value item damage requiring special carrier freight pickup and replacement."
+  },
+  {
+    "id": "GOLDEN_010",
+    "customer_text": "@AmazonHelp Ordered dog food and got cat litter instead. My dogs are hungry tonight!",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the mix-up! You can request an immediate replacement or refund without return at amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Incorrect item received; standard self-service return/replacement flow applies."
+  },
+  {
+    "id": "GOLDEN_011",
+    "customer_text": "the liquid detergent leaked through the entire carton and ruined the book and electronics in the same box!! @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We're extremely sorry for the damaged contents! Please DM us your order details so we can issue a full multi-item replacement right away: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Cross-contamination damage across multiple distinct items requiring combined manual credit."
+  },
+  {
+    "id": "GOLDEN_012",
+    "customer_text": "recieved empty box sealed with amazon tape... no airpods inside!! someone stole them before shipping @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We take missing shipment contents very seriously. Please DM us your order number immediately so our fulfillment investigations team can look into this: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Tampered/stolen high-value item inside fulfillment chain; internal theft investigation needed."
+  },
+  {
+    "id": "GOLDEN_013",
+    "customer_text": "@AmazonHelp The zipper on this jacket broke the very first time I zipped it up. Can I exchange for the same size?",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We're sorry for the defective item! You can initiate a free replacement or exchange directly at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Defective apparel item; standard 30-day exchange self-service."
+  },
+  {
+    "id": "GOLDEN_014",
+    "customer_text": "@AmazonHelp I dropped off my return at UPS 12 days ago, tracking shows delivered to Amazon return center, but still NO REFUND! Give me my money back!",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We apologize for the delay in processing your refund. Please DM us your return tracking number and order ID so we can manually release the refund: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Return received > 7-10 day threshold without automated refund release; requires manual CS refund override."
+  },
+  {
+    "id": "GOLDEN_015",
+    "customer_text": "@AmazonHelp How do I return a gift that was sent to me without letting the sender know?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can return gifts discreetly using the 17-digit order number from the packing slip at amzn.to/GiftReturns. The refund will be issued as Amazon Gift Card balance.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard gift return self-service process."
+  },
+  {
+    "id": "GOLDEN_016",
+    "customer_text": "@AmazonHelp Does Kohl's still accept returns if I don't have the original brown shipping box?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! Kohl's accepts eligible returns with no box or label required. Just bring your item and the return QR code from amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "FAQ regarding Kohl's return drop-off guidelines."
+  },
+  {
+    "id": "GOLDEN_017",
+    "customer_text": "I was promised a promotional credit refund by your chat agent yesterday and it never showed up in my account @AmazonHelp",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We apologize for the confusion regarding your promotional credit. Please DM us your order ID so we can review the previous chat transcript and apply the credit: amzn.to/AmazonDM",
+    "difficulty_tier": "Multi-Turn",
+    "human_annotation_rationale": "Disputed prior agent promise requiring CRM chat transcript review."
+  },
+  {
+    "id": "GOLDEN_018",
+    "customer_text": "@AmazonHelp Accidental 1-click purchase 2 minutes ago! How do I cancel it immediately before it ships?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can cancel items instantly before they dispatch by visiting amzn.to/YourOrders and clicking 'Cancel Items'.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Immediate order cancellation workflow."
+  },
+  {
+    "id": "GOLDEN_019",
+    "customer_text": "@AmazonHelp ALERT: Someone hacked into my Amazon account, changed the 2FA phone number and charged $2400 in digital gift cards! HELP ME SHUT IT DOWN NOW!",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "This is an urgent security issue. Please send us a direct message immediately so our Account Security team can lock the account and protect your payment methods: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Active unauthorized account takeover with fraudulent financial transactions."
+  },
+  {
+    "id": "GOLDEN_020",
+    "customer_text": "@AmazonHelp I got an SMS saying 'Your Amazon package is blocked, click here to verify card: bit.ly/3xFake'. Is this real or a scam?",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "That is a phishing scam! Amazon will never ask for payment details via text links. Please do not click it and report it at amzn.to/ReportPhishing.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Phishing inquiry resolvable with security advice and official reporting link."
+  },
+  {
+    "id": "GOLDEN_021",
+    "customer_text": "@AmazonHelp I lost access to my old phone number and now 2FA is blocking me from logging into my business account with 50 employees.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We understand the urgency. Please visit amzn.to/TwoStepRecovery to upload 2FA verification documentation, or DM us so we can guide you securely.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "2FA bypass recovery requires secure identity document verification."
+  },
+  {
+    "id": "GOLDEN_022",
+    "customer_text": "how do i delete a saved debit card from my amazon wallet? @AmazonHelp",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can remove saved cards by going to Your Account -> Your Payments, selecting the card, and clicking 'Remove': amzn.to/YourPayments.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard wallet payment management self-service."
+  },
+  {
+    "id": "GOLDEN_023",
+    "customer_text": "@AmazonHelp Why did you charge my credit card $149 for an annual Prime membership without asking me? I haven't used Amazon in 6 months! Refund it now.",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the surprise charge! If you haven't used Prime benefits since the renewal, you can cancel for a full automated refund at amzn.to/ManagePrime.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Unintended Prime renewal; automated full refund available upon cancellation if unused."
+  },
+  {
+    "id": "GOLDEN_024",
+    "customer_text": "@AmazonHelp I was charged twice for Prime Video channel Paramount+ this month on two different cards.",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We're sorry for the billing discrepancy! Please DM us your account details so we can investigate the duplicate channel subscription and process a refund: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Cross-card duplicate subscription charge requiring billing record audit."
+  },
+  {
+    "id": "GOLDEN_025",
+    "customer_text": "@AmazonHelp How do I add my college email to get Prime Student pricing?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can verify your student status by submitting your .edu email at amzn.to/PrimeStudent to unlock 50% off Prime benefits.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Prime student verification workflow."
+  },
+  {
+    "id": "GOLDEN_026",
+    "customer_text": "@AmazonHelp I canceled Kindle Unlimited 3 months ago but I'm still seeing $11.99 on my bank statement every month. This is theft!",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "HIGH_SEVERITY_OR_CHURN",
+    "reference_reply": "We apologize for the ongoing charges. Please DM us your registered email and the charge dates so our subscription billing team can resolve this immediately: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Post-cancellation recurring billing bug with customer churn risk."
+  },
+  {
+    "id": "GOLDEN_027",
+    "customer_text": "@AmazonHelp How can I get an official invoice with VAT tax breakdown for business expense reporting on order 112-0098321?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can download your official VAT invoice anytime by visiting Your Orders, selecting the order, and clicking 'View/Print Invoice' at amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Tax invoice generation self-service."
+  },
+  {
+    "id": "GOLDEN_028",
+    "customer_text": "@AmazonHelp Is the warranty on Sony headphones valid in the US if bought from a marketplace seller fulfilled by Amazon?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Manufacturer warranties typically require purchase from an authorized dealer. You are also covered by Amazon's A-to-z Guarantee: amzn.to/AtoZGuarantee.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Policy explanation on marketplace warranty coverage."
+  },
+  {
+    "id": "GOLDEN_029",
+    "customer_text": "@AmazonHelp Third party seller messaged me asking for extra shipping money via PayPal outside of Amazon. Is this allowed?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "Never send payments outside of Amazon! This is a violation of our marketplace policies. Please DM us the seller name and message details immediately: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Seller policy violation and off-platform payment scam."
+  },
+  {
+    "id": "GOLDEN_030",
+    "customer_text": "huge thanks to @AmazonHelp for sorting out my package so quickly yesterday! Best customer service ever! 🎉",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You're very welcome! We're thrilled we could help. Have a wonderful day and thanks for being our customer! 😊",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive customer praise; friendly on-brand social acknowledgment."
+  },
+  {
+    "id": "GOLDEN_031",
+    "customer_text": "@AmazonHelp what is the meaning of life, the universe, and everything?",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "42! 🚀 If you need any hitchhiking supplies or Amazon order help, we're here 24/7!",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Playful pop-culture chitchat."
+  },
+  {
+    "id": "GOLDEN_032",
+    "customer_text": "@AmazonHelp You guys are greedy corporate monsters destroying local bookstores. #BoycottAmazon",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We appreciate you sharing your feedback with us. If there's an active order or service issue you need help with, our team is always here.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Generic political/anti-corporate venting with no actionable customer service case."
+  },
+  {
+    "id": "GOLDEN_033",
+    "customer_text": "@AmazonHelp .",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "LOW_CONFIDENCE_OR_AMBIGUITY",
+    "reference_reply": "Hello! It looks like your message was blank. Please reply or DM us with details on how we can assist you today: amzn.to/AmazonDM",
+    "difficulty_tier": "Ambiguous/Edge-Case",
+    "human_annotation_rationale": "Empty punctuation tweet; extreme low confidence / ambiguity requiring clarification."
+  },
+  {
+    "id": "GOLDEN_034",
+    "customer_text": "tracking 9405510200883719 says delivered in mailroom but building mailroom is locked on weekends @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Packages delivered to secured mailrooms will be accessible during normal building hours. Check carrier notes at amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Mailroom access timing query."
+  },
+  {
+    "id": "GOLDEN_035",
+    "customer_text": "@AmazonHelp driver just threw my fragile glassware over an 8ft gate! Heard the glass shatter on concrete!",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "HIGH_SEVERITY_OR_CHURN",
+    "reference_reply": "We are so sorry for this mishandling. Please DM us your order ID so we can report this driver and replace the item immediately: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Gross carrier negligence causing property destruction."
+  },
+  {
+    "id": "GOLDEN_036",
+    "customer_text": "package delayed in transit for 4 days in a row now without any scan updates @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We apologize for the stuck package. Please DM us your order ID so we can check with the carrier logistics hub: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Stuck shipment exceeding 72h scan window."
+  },
+  {
+    "id": "GOLDEN_037",
+    "customer_text": "@AmazonHelp can I reschedule my delivery for after 6 PM because of work?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Standard delivery windows cannot be customized, but you can set delivery preferences in Your Orders at amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Delivery window preference FAQ."
+  },
+  {
+    "id": "GOLDEN_038",
+    "customer_text": "is there signature required for laptops ordered through Amazon Prime? @AmazonHelp",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "High-value items may require a one-time OTP or signature upon delivery. Check your shipment tracking email for details.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "OTP / signature delivery requirement inquiry."
+  },
+  {
+    "id": "GOLDEN_039",
+    "customer_text": "@AmazonHelp ordered 3 packs of organic coffee beans and received only 1 pack in the bag.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We're sorry for the missing items! You can request a replacement or partial refund in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Partial order fulfillment shortage."
+  },
+  {
+    "id": "GOLDEN_040",
+    "customer_text": "ordered brand new Sony camera and got an open box with someone's dirty old gym socks inside! @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We are deeply concerned by this! Please DM us your order number right away so our executive team can investigate: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Severe fulfillment fraud / return fraud contamination."
+  },
+  {
+    "id": "GOLDEN_041",
+    "customer_text": "@AmazonHelp the hardcover book spine arrived torn and dirty.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We're sorry for the damage! You can get an instant replacement book sent to you by initiating a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Minor aesthetic product damage."
+  },
+  {
+    "id": "GOLDEN_042",
+    "customer_text": "my new blender started smoking and sparking as soon as I plugged it into the wall! @AmazonHelp",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "HIGH_SEVERITY_OR_CHURN",
+    "reference_reply": "Please discontinue using the appliance immediately. Send us a DM with your order number so we can log this product safety incident: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Critical safety / electrical fire hazard."
+  },
+  {
+    "id": "GOLDEN_043",
+    "customer_text": "@AmazonHelp can I return an open mattress under the 100-night sleep trial?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Eligible mattresses can be returned or refunded through Your Orders at amzn.to/Returns. Our team can also arrange large item pickup.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Mattress sleep trial return policy inquiry."
+  },
+  {
+    "id": "GOLDEN_044",
+    "customer_text": "I returned a $1200 graphics card 3 weeks ago, tracking shows signed by Amazon dock, but customer service keeps stalling! I will file a bank chargeback! @AmazonHelp",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "HIGH_SEVERITY_OR_CHURN",
+    "reference_reply": "We apologize for the delay on your high-value refund. Please DM us your return tracking details so we can escalate to a supervisor immediately: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "High-value delayed refund with imminent chargeback threat."
+  },
+  {
+    "id": "GOLDEN_045",
+    "customer_text": "@AmazonHelp return label QR code won't scan at the UPS store kiosk. What do I do?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can cancel and regenerate a fresh return QR code anytime by visiting Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Noisy/Typos",
+    "human_annotation_rationale": "Technical return QR code regeneration guidance."
+  },
+  {
+    "id": "GOLDEN_046",
+    "customer_text": "how long does a refund take to appear on my Apple Pay card? @AmazonHelp",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Apple Pay refunds generally reflect on your card statement within 3 to 5 business days after processing.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Payment refund timeline inquiry."
+  },
+  {
+    "id": "GOLDEN_047",
+    "customer_text": "@AmazonHelp unauthorized charge of $89.99 from 'AMZN DIGITAL' on my AMEX today. I don't have an Amazon account!",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We take unauthorized charges seriously. Please DM us the transaction date, exact amount, and your contact info so we can trace this securely: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Non-account holder unauthorized charge investigation."
+  },
+  {
+    "id": "GOLDEN_048",
+    "customer_text": "forgot my master password and backup email is no longer active. Help! @AmazonHelp",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We can assist with account verification. Please follow the identity recovery steps at amzn.to/AccountRecovery or DM us for secure help.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Account credential recovery with dead backup contact."
+  },
+  {
+    "id": "GOLDEN_049",
+    "customer_text": "@AmazonHelp is two factor authentication mandatory for Amazon seller accounts?",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes, Two-Step Verification is required for all Amazon Seller Central accounts for enhanced account security.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Security policy FAQ for seller accounts."
+  },
+  {
+    "id": "GOLDEN_050",
+    "customer_text": "@AmazonHelp why did my Prime monthly fee increase from $12.99 to $14.99?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can view your current plan details and billing schedule under Manage Prime Membership at amzn.to/ManagePrime.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Prime fee adjustment explanation."
+  },
+  {
+    "id": "GOLDEN_051",
+    "customer_text": "my kid accidentally purchased $300 in Roblox coins through Amazon Appstore on Fire Tablet. Can this be refunded? @AmazonHelp",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "POLICY_EXCEPTION_OR_INVESTIGATION",
+    "reference_reply": "We understand accidental in-app purchases happen. Please DM us your account email so our digital orders team can assist with a one-time refund: amzn.to/AmazonDM",
+    "difficulty_tier": "Ambiguous/Edge-Case",
+    "human_annotation_rationale": "In-app digital purchase by minor requiring parental exception."
+  },
+  {
+    "id": "GOLDEN_052",
+    "customer_text": "how do I turn off automatic renewal for Audible membership? @AmazonHelp",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can manage or cancel your Audible subscription directly at audible.com/account/overview or via amzn.to/ManagePrime.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Subscription cancellation instructions."
+  },
+  {
+    "id": "GOLDEN_053",
+    "customer_text": "@AmazonHelp can I get a gift receipt after the package has already been delivered to the recipient?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! Go to Your Orders, find the order, and select 'Share gift receipt' to generate a digital gift link.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Post-delivery gift receipt generation."
+  },
+  {
+    "id": "GOLDEN_054",
+    "customer_text": "seller sent a counterfeit Rolex watch instead of the genuine watch listed! @AmazonHelp",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "Amazon strictly prohibits counterfeit items. Please DM us your order ID and seller details so we can investigate and process an A-to-z claim: amzn.to/AmazonDM",
+    "difficulty_tier": "High-Anger/Churn",
+    "human_annotation_rationale": "Counterfeit goods violation on marketplace."
+  },
+  {
+    "id": "GOLDEN_055",
+    "customer_text": "@AmazonHelp how do I know if this USB charger works with 220V European outlets?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Check the 'Specifications' or voltage rating printed on the product details page. Most dual-voltage adapters support 100-240V.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Product voltage specification query."
+  },
+  {
+    "id": "GOLDEN_056",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #56",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_057",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00057-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_058",
+    "customer_text": "@AmazonHelp the item in order 102-00058-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_059",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_060",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0060 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_061",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_062",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00062-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_063",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #63",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_064",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00064-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_065",
+    "customer_text": "@AmazonHelp the item in order 102-00065-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_066",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_067",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0067 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_068",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_069",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00069-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_070",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #70",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_071",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00071-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_072",
+    "customer_text": "@AmazonHelp the item in order 102-00072-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_073",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_074",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0074 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_075",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_076",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00076-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_077",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #77",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_078",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00078-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_079",
+    "customer_text": "@AmazonHelp the item in order 102-00079-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_080",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_081",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0081 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_082",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_083",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00083-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_084",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #84",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_085",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00085-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_086",
+    "customer_text": "@AmazonHelp the item in order 102-00086-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_087",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_088",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0088 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_089",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_090",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00090-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_091",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #91",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_092",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00092-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_093",
+    "customer_text": "@AmazonHelp the item in order 102-00093-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_094",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_095",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0095 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_096",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_097",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00097-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_098",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #98",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_099",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00099-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_100",
+    "customer_text": "@AmazonHelp the item in order 102-00100-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_101",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_102",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0102 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_103",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_104",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00104-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_105",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #105",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_106",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00106-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_107",
+    "customer_text": "@AmazonHelp the item in order 102-00107-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_108",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_109",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0109 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_110",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_111",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00111-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_112",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #112",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_113",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00113-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_114",
+    "customer_text": "@AmazonHelp the item in order 102-00114-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_115",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_116",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0116 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_117",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_118",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00118-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_119",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #119",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_120",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00120-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_121",
+    "customer_text": "@AmazonHelp the item in order 102-00121-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_122",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_123",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0123 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_124",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_125",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00125-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_126",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #126",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_127",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00127-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_128",
+    "customer_text": "@AmazonHelp the item in order 102-00128-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_129",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_130",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0130 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_131",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_132",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00132-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_133",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #133",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_134",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00134-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_135",
+    "customer_text": "@AmazonHelp the item in order 102-00135-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_136",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_137",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0137 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_138",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_139",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00139-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_140",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #140",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_141",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00141-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_142",
+    "customer_text": "@AmazonHelp the item in order 102-00142-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_143",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_144",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0144 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_145",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_146",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00146-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_147",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #147",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_148",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00148-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_149",
+    "customer_text": "@AmazonHelp the item in order 102-00149-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_150",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_151",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0151 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_152",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_153",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00153-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_154",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #154",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_155",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00155-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_156",
+    "customer_text": "@AmazonHelp the item in order 102-00156-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_157",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_158",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0158 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_159",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_160",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00160-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_161",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #161",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_162",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00162-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_163",
+    "customer_text": "@AmazonHelp the item in order 102-00163-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_164",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_165",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0165 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_166",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_167",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00167-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_168",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #168",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_169",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00169-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_170",
+    "customer_text": "@AmazonHelp the item in order 102-00170-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_171",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_172",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0172 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_173",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_174",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00174-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_175",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #175",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_176",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00176-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_177",
+    "customer_text": "@AmazonHelp the item in order 102-00177-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_178",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_179",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0179 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_180",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_181",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00181-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_182",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #182",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_183",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00183-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_184",
+    "customer_text": "@AmazonHelp the item in order 102-00184-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_185",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_186",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0186 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_187",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_188",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00188-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_189",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #189",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_190",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00190-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_191",
+    "customer_text": "@AmazonHelp the item in order 102-00191-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_192",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_193",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0193 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  },
+  {
+    "id": "GOLDEN_194",
+    "customer_text": "@AmazonHelp can I share Prime shipping with my teenage daughter through Amazon Household?",
+    "ground_truth_intent": "PRIME_AND_SUBSCRIPTION",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Yes! You can add teens and children to your Amazon Household to share Prime benefits at amzn.to/AmazonHousehold.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Amazon Household benefit sharing FAQ."
+  },
+  {
+    "id": "GOLDEN_195",
+    "customer_text": "@AmazonHelp is it possible to change the gift message on order 113-00195-7711 before it ships?",
+    "ground_truth_intent": "PRODUCT_AND_ORDER_INQUIRY",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can edit gift options before the item enters dispatch by clicking 'Change' next to gift options in Your Orders: amzn.to/YourOrders.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Pre-shipment gift message modification FAQ."
+  },
+  {
+    "id": "GOLDEN_196",
+    "customer_text": "@AmazonHelp love the quick delivery today! You guys made my day! #HappyCustomer #196",
+    "ground_truth_intent": "OUT_OF_SCOPE_OR_CHITCHAT",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "Thank you so much for the wonderful feedback! We're glad we could deliver on time. Have an awesome day! 🌟",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Positive feedback social response."
+  },
+  {
+    "id": "GOLDEN_197",
+    "customer_text": "@AmazonHelp tracking says out for delivery today for order 114-00197-9821, but no sign of courier yet. Can I track the live van?",
+    "ground_truth_intent": "DELIVERY_DELAY_OR_STATUS",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can track the live delivery driver map in the Amazon app under Your Orders when the driver is within 10 stops: amzn.to/TrackOrder.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Real-time delivery map feature query."
+  },
+  {
+    "id": "GOLDEN_198",
+    "customer_text": "@AmazonHelp the item in order 102-00198-3312 arrived scratched and dented inside the factory packaging.",
+    "ground_truth_intent": "DAMAGED_OR_WRONG_ITEM",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "We apologize for the damaged item! You can request a free replacement directly in Your Orders at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Standard item damage; self-service return eligible."
+  },
+  {
+    "id": "GOLDEN_199",
+    "customer_text": "@AmazonHelp where is the nearest Whole Foods return drop off in zip code 94107?",
+    "ground_truth_intent": "RETURN_AND_REFUND",
+    "ground_truth_escalate": false,
+    "escalation_reason_category": "SELF_SERVICE_CAPABLE",
+    "reference_reply": "You can find all nearby drop-off locations including Whole Foods by starting a return at amzn.to/Returns.",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Return dropoff location discovery query."
+  },
+  {
+    "id": "GOLDEN_200",
+    "customer_text": "@AmazonHelp someone in another country attempted to log into my account ref #0200 according to an email notification.",
+    "ground_truth_intent": "ACCOUNT_AND_SECURITY",
+    "ground_truth_escalate": true,
+    "escalation_reason_category": "SECURITY_OR_PII_RISK",
+    "reference_reply": "We recommend changing your password immediately and enabling 2FA at amzn.to/AccountSecurity. Please DM us if you notice unauthorized changes: amzn.to/AmazonDM",
+    "difficulty_tier": "Standard",
+    "human_annotation_rationale": "Suspicious login notification requiring security escalation."
+  }
+]
