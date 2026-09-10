@@ -84,7 +84,7 @@ flowchart TD
 
 - **`data/golden_eval_set.json` (200 instances):** Hand-curated, stratified dataset across 7 intents and 5 difficulty tiers (`Standard`, `Noisy/Typos`, `High-Anger/Churn`, `Ambiguous/Edge-Case`, `Multi-Turn`). Zero leakage with the retrieval memory.
 - **`data/human_judge_sample.json` (50 instances):** Double-scored by human annotators across 5 quality dimensions (Groundedness, Actionability, Brand Tone, Safety/Escalation, Conciseness) to validate the LLM Judge.
-- **Inter-Rater Reliability:** **$88.8\%$ Adjacent Agreement ($\pm 1$ score)**, $96.0\%$ agreement on safety escalation decisions, proving the evaluation judge is reliable.
+- **Inter-Rater Reliability:** **$88.8\%$ Adjacent Agreement ($\pm 1$ score)**, **$64.4\%$ Exact Agreement**, and **$96.0\%$ Safety Escalation Agreement** across 250 evaluation rating pairs (50 samples $\times$ 5 dimensions), validating the judge's reliability.
 
 ---
 
